@@ -1,0 +1,23 @@
+import requests
+
+from bs4 import BeautifulSoup
+
+# Download the HTML content from Amazon
+
+url = "https://www.amazon.com/" response = requests.get(url)
+
+html_content = response.content
+
+# Parse the HTML content using BeautifulSoup soup = BeautifulSoup(html_content, "html.parser")
+
+# Find the laptop name, price, and model laptop_name = soup.find("span", class="a-size-medium a-color-base
+
+a-text-normal").text laptop_price = soup.find("span", laptop_model = soup.find("span", class_="a-size-small").text
+
+class_="a-offscreen").text
+
+# Print the results
+
+print("Laptop Name:", laptop_name)
+print("Laptop Price:", laptop_price)
+print("Laptop Model:", laptop_model)
